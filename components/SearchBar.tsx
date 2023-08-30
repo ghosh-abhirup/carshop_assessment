@@ -33,12 +33,14 @@ const SearchBar = () => {
     const searchParams = new URLSearchParams(window.location.search);
 
     if (model) {
+      searchParams.set("limit", "9");
       searchParams.set("model", model);
     } else {
       searchParams.delete("model");
     }
 
     if (manufacturer) {
+      searchParams.set("limit", "9");
       searchParams.set("manufacturer", manufacturer);
     } else {
       searchParams.delete("manufacturer");
@@ -55,7 +57,7 @@ const SearchBar = () => {
 
   return (
     <form
-      className="serachbar w-full flex flex-col gap-2 sm:flex-row sm:gap-0"
+      className="serachbar w-full sm:w-fit flex flex-col gap-2 sm:flex-row sm:gap-0"
       onSubmit={handleSearch}
     >
       <div className="searchbar__item">
