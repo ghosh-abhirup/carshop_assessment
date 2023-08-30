@@ -2,11 +2,18 @@ import CarCard from "@/components/CarCard";
 import CustomFilter from "@/components/CustomFilter";
 import Hero from "@/components/Hero";
 import SearchBar from "@/components/SearchBar";
+import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
 import Image from "next/image";
 
-export default async function Home() {
-  const allCars = await fetchCars();
+export default async function Home({ searchParams }: HomeProps) {
+  const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer || "",
+    model: searchParams.model || "",
+    year: searchParams.year || 2022,
+    limit: searchParams.limit || 10,
+    fuel: searchParams.fuel || "",
+  });
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
   // console.log(allCars);
   return (
@@ -30,8 +37,8 @@ export default async function Home() {
         {!isDataEmpty ? (
           <section>
             <div className="home__cars-wrapper">
-              {allCars?.map((car) => (
-                <CarCard car={car} />
+              {allCars?.map((car, index) => (
+                <CarCard car={car} key={index} />
               ))}
             </div>
           </section>

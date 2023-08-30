@@ -20,11 +20,11 @@ const CarCard = ({ car }: CarCardProps) => {
           {make} {model}
         </h2>
       </div>
-      <p className="flex mt-6 text-[32px] font-extrabold">
+      {/* <p className="flex mt-6 text-[32px] font-extrabold">
         <span className="self-start text-[14px] font-semibold">$</span>
         {45}
         <span className="self-start text-[14px] font-semibold">/day</span>
-      </p>
+      </p> */}
 
       <div className="relative w-full h-40 my-3 object-contain">
         <Image
@@ -66,10 +66,7 @@ const CarCard = ({ car }: CarCardProps) => {
             textStyles="text-white text-[14px] leading-[17px] font-bold"
             rightIcon="/right-arrow.svg"
             isDisabled={false}
-            handleClick={() => {
-              setIsOpen(true);
-              console.log("Hey");
-            }}
+            handleClick={() => setIsOpen(true)}
           />
         </div>
       </div>

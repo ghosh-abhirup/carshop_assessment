@@ -16,7 +16,7 @@ const Footer = () => {
             alt="logo"
           />
           <p className="text-base text-black-100">
-            Carshop.io 2023 <br /> All rights reserved &copy;
+            CarHub 2023 <br /> All rights reserved &copy;
           </p>
         </div>
 
@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex flex-wrap justify-between items-center mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
-        <p>@2023 Carshop.io. All rights reserved.</p>
+        <p>@2023 CarHub. All rights reserved.</p>
 
         <div className="footer__copyrights-link">
           <Link href={"/"} className="text-gray-500">

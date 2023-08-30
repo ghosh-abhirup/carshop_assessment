@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Carshop.io",
+  title: "CarHub",
   description: "Find, book or rent a car - quickly and easily!",
 };
 
